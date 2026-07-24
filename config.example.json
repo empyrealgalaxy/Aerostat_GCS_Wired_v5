@@ -1,0 +1,256 @@
+{
+    "mqtt": {
+        "broker": "YOUR_HIVEMQ_BROKER_URL",
+        "port": 8883,
+        "username": "YOUR_MQTT_USERNAME",
+        "password": "YOUR_MQTT_PASSWORD",
+        "use_tls": true,
+        "topic": "parveenesp32/sensor_data"
+    },
+    "parameters": {
+        "helium_pressure_mbar": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 20.0,
+            "unit": "mbar",
+            "display_name": "Helium Pressure",
+            "category": "pressure"
+        },
+        "ballonet_pressure_mbar": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 20.0,
+            "unit": "mbar",
+            "display_name": "Ballonet Pressure",
+            "category": "pressure"
+        },
+        "windscreen_pressure_mbar": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 20.0,
+            "unit": "mbar",
+            "display_name": "Windscreen Pressure",
+            "category": "pressure"
+        },
+        "ambient_pressure_mbar": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 25.0,
+            "unit": "mbar",
+            "display_name": "Ambient Pressure",
+            "category": "pressure"
+        },
+        "confluence_point_tension_N": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 25.0,
+            "unit": "N",
+            "display_name": "Confluence Point Tension",
+            "category": "tether"
+        },
+        "winch_tether_tension_kg": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 5.0,
+            "threshold_max": 25.0,
+            "unit": "N",
+            "display_name": "Winch Tension",
+            "category": "tether"
+        },
+        "helium_temp_C": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 10.0,
+            "threshold_max": 30.0,
+            "unit": "°C",
+            "display_name": "Helium Temperature",
+            "category": "temperature"
+        },
+        "payload_temp_C": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 10.0,
+            "threshold_max": 30.0,
+            "unit": "°C",
+            "display_name": "Payload Temperature",
+            "category": "temperature"
+        },
+        "ambient_temp_C": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 10.0,
+            "threshold_max": 30.0,
+            "unit": "°C",
+            "display_name": "Ambient Temperature",
+            "category": "temperature"
+        },
+        "windscreen_temp_C": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 10.0,
+            "threshold_max": 30.0,
+            "unit": "°C",
+            "display_name": "Windscreen Temperature",
+            "category": "temperature"
+        },
+        "pitch_degrees": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": -90.0,
+            "threshold_max": 90.0,
+            "unit": "°",
+            "display_name": "Pitch",
+            "category": "position"
+        },
+        "roll_degrees": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": -90.0,
+            "threshold_max": 90.0,
+            "unit": "°",
+            "display_name": "Roll",
+            "category": "position"
+        },
+        "yaw_degrees": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 360.0,
+            "unit": "°",
+            "display_name": "Yaw",
+            "category": "position"
+        },
+        "altitude_m": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 1000.0,
+            "unit": "m",
+            "display_name": "Altitude",
+            "category": "position"
+        },
+        "voltage_V": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 20.0,
+            "threshold_max": 40.0,
+            "unit": "V",
+            "display_name": "Voltage",
+            "category": "electrical"
+        },
+        "current_A": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 50.0,
+            "unit": "A",
+            "display_name": "Current",
+            "category": "electrical"
+        },
+        "ground_voltage_V": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 20.0,
+            "threshold_max": 40.0,
+            "unit": "V",
+            "display_name": "Ground Voltage",
+            "category": "electrical"
+        },
+        "ground_current_A": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 50.0,
+            "unit": "A",
+            "display_name": "Ground Current",
+            "category": "electrical"
+        },
+        "wind_direction_degrees": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 360.0,
+            "unit": "°",
+            "display_name": "Wind Direction",
+            "category": "weather"
+        },
+        "ground_wind_direction_degrees": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": 0.0,
+            "threshold_max": 360.0,
+            "unit": "°",
+            "display_name": "Ground Wind Direction",
+            "category": "weather"
+        },
+        "ground_temperature_C": {
+            "enabled": true,
+            "visible": true,
+            "threshold_min": -20.0,
+            "threshold_max": 50.0,
+            "unit": "°C",
+            "display_name": "Ground Temperature",
+            "category": "weather"
+        }
+    },
+    "screens": {
+        "primary": {
+            "name": "Primary Monitor",
+            "categories": ["pressure", "temperature", "position"]
+        },
+        "secondary": {
+            "name": "Secondary Monitor",
+            "categories": ["electrical", "weather", "status"]
+        },
+        "controls": {
+            "name": "Control Panel",
+            "categories": ["pressurization", "charts", "video"]
+        }
+    },
+    "users": {
+        "admin": {
+            "password": "CHANGE_ME",
+            "role": "admin",
+            "permissions": ["view", "configure", "control"]
+        },
+        "operator": {
+            "password": "CHANGE_ME",
+            "role": "operator",
+            "permissions": ["view", "control"]
+        },
+        "viewer": {
+            "password": "CHANGE_ME",
+            "role": "viewer",
+            "permissions": ["view"]
+        }
+    },
+    "alerts": {
+        "enabled": true,
+        "email_notifications": false,
+        "sound_alerts": true,
+        "alert_thresholds": {
+            "critical": 0.9,
+            "warning": 0.7,
+            "info": 0.5
+        }
+    },
+    "intrusion_detection": {
+        "enabled": true,
+        "cooldown_seconds": 5.0,
+        "alert_levels": {
+            "low":      {"sound": false, "visual": true},
+            "medium":   {"sound": true,  "visual": true},
+            "high":     {"sound": true,  "visual": true},
+            "critical": {"sound": true,  "visual": true}
+        },
+        "sound_enabled": true,
+        "visual_enabled": true,
+        "log_enabled": true,
+        "email_enabled": false
+    }
+}

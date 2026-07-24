@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# PyInstaller build output
+build/
+dist/
+*.spec.bak
+obfuscated/
+
+# Runtime generated data & logs
+data.json
+stream_config.json
+thresholds.json
+data/
+logs/
+aerostat_logs_*.json
+aerostat_logs_*.csv
+aerostat_logs_*.txt
+aerostat_realtime_logs_*.txt
+aerostat_realtime_logs_*.csv
+dashboard_error.log
+
+# Sensitive credentials - DO NOT COMMIT
+config.json
+api_keys.json
+
+# YOLO model weights (large binary files - download separately)
+*.pt
+*.onnx
+*.engine
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log

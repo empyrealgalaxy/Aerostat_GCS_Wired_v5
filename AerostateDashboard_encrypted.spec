@@ -1,0 +1,108 @@
+# -*- mode: python ; coding: utf-8 -*-
+# Encrypted/Obfuscated Build Spec
+
+a = Analysis(
+    ['run_dashboard_obfuscated.py'],
+    pathex=[],
+    binaries=[],
+    datas=[
+        ('templates', 'templates'),
+        ('static', 'static'),
+    ],
+    hiddenimports=[
+        'paho.mqtt.client',
+        'paho.mqtt',
+        'fastapi',
+        'uvicorn',
+        'uvicorn.lifespan',
+        'uvicorn.protocols.http.auto',
+        'uvicorn.protocols.websockets.auto',
+        'uvicorn.protocols.websockets.websockets_impl',
+        'uvicorn.loops.auto',
+        'uvicorn.loops.uvloop',
+        'uvicorn.loops.asyncio',
+        'uvicorn.logging',
+        'uvicorn.config',
+        'uvicorn.server',
+        'uvicorn.main',
+        'jinja2',
+        'jinja2.loaders',
+        'websockets',
+        'starlette.staticfiles',
+        'starlette.responses',
+        'starlette.applications',
+        'starlette.middleware',
+        'starlette.routing',
+        'starlette.templating',
+        'starlette.websockets',
+        'pydantic',
+        'pydantic.fields',
+        'pydantic.main',
+        'email_validator',
+        'typing_extensions',
+        'anyio',
+        'sniffio',
+        'idna',
+        'h11',
+        'httptools',
+        'click',
+        'watchfiles',
+        'asyncio',
+        'ssl',
+        'socket',
+        'json',
+        'csv',
+        'logging',
+        'logging.handlers',
+        'threading',
+        'io',
+        'traceback',
+        'hashlib',
+        'secrets',
+        'datetime',
+    ],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[
+        'matplotlib',
+        'pandas',
+        'numpy.testing',
+        'scipy',
+        'PIL',
+        'tkinter',
+    ],
+    noarchive=False,
+    optimize=2,  # Maximum bytecode optimization
+    strip=False,  # Strip disabled for Windows compatibility
+)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=None)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    [],
+    exclude_binaries=True,
+    name='AerostateDashboard',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,  # Strip disabled for Windows compatibility
+    upx=False,
+    console=True,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+)
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,  # Strip disabled for Windows compatibility
+    upx=False,
+    upx_exclude=[],
+    name='AerostateDashboard',
+)
